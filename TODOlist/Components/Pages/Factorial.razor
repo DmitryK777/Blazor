@@ -1,0 +1,35 @@
+﻿@page "/factorial"
+@rendermode InteractiveServer
+
+<h3>Factorial</h3>
+
+<input placeholder="Факториал" @bind="number" />
+<button @onclick="Calculate">Расчитать</button>
+<p>Factorial равен: @factorial</p>
+
+
+@code {
+    int number;
+    int factorial = 0;
+
+    void Calculate()
+    {
+        if (number == 1)
+        {
+            factorial = 1;
+        }
+
+        else if (number > 1)
+        {
+            factorial = 1; 
+            for(int i =1; i <= number; i++)
+            {
+                factorial *= i;
+            }
+        }
+        else
+        {
+            factorial = 0;
+        }
+    }
+}

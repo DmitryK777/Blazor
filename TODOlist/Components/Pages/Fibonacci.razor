@@ -1,0 +1,44 @@
+﻿@page "/fibonacci"
+@rendermode InteractiveServer
+
+<h3>Fibonacci</h3>
+
+<input placeholder="Фибоначи" @bind="number" />
+<button @onclick="Calculate">Расчитать</button>
+<p>Fibonacci равен: @fibonacci</p>
+
+
+@code {
+    int number = 1;
+    int fibonacci;
+
+    void Calculate()
+    {
+        int f1 = 0;
+        int f2 = 1;
+        int temp = 0;
+        fibonacci = 0;
+
+        if (number <= 1)
+        {
+            fibonacci = f1;
+        }
+
+        else if (number == 2)
+        {
+            fibonacci = f2;
+        }
+
+        else
+        {
+            for (int i = 2; i < number; i++)
+            {
+                temp = f1 + f2;
+                f1 = f2;
+                f2 = temp;
+            }
+            fibonacci = f2;
+            temp = 0;
+        }
+    }
+}
