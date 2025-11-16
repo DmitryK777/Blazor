@@ -11,5 +11,6 @@ namespace Academy.Models
 
         [Required]
         [StringLength(50, MinimumLength = 5)]
+        public string direction_name { get; set; }
     }
 }

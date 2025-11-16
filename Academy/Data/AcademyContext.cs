@@ -15,5 +15,6 @@ namespace Academy.Data
         }
 
         public DbSet<Academy.Models.Discipline> Disciplines { get; set; } = default!;
+        public DbSet<Academy.Models.Directions> Directions { get; set; } = default!;
     }
 }
